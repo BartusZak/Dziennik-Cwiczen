@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#DEDEDC"
+    android:weightSum="100">
+    <TextView
+        android:text="Utwórz konto"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_weight="20"
+        android:layout_height="0dp"
+        android:textColor="#368DEB"
+        android:id="@+id/txtCreateAccount"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="25sp" />
+    <Button
+        android:text="Zaloguj się"
+        android:layout_width="match_parent"
+        android:layout_weight="15"
+        android:layout_height="0dp"
+        android:id="@+id/btnZaloguj"
+        android:textStyle="bold"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textSize="15sp"
+        android:background="@drawable/buttonsignupstyle" />
+    <TextView
+        android:text="lub"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_weight="15"
+        android:layout_height="0dp"
+        android:textColor="#000"
+        android:id="@+id/txtOr"
+        android:gravity="center" />
+    <Button
+        android:text="Zarejestruj się przez e-mail"
+        android:layout_width="match_parent"
+        android:layout_weight="15"
+        android:layout_height="0dp"
+        android:background="@drawable/ButtonSignInStyle"
+        android:id="@+id/btnSignUp"
+        android:textStyle="bold"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textSize="15sp"
+        android:drawableLeft="@drawable/mail_icon" />
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar1"
+        android:background="@drawable/ProgresBarStyle"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:paddingBottom="-20dp"
+        android:visibility="invisible" />
+</LinearLayout>
