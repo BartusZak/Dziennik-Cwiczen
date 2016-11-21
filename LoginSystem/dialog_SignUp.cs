@@ -12,7 +12,7 @@ using Android.Widget;
 using System.Net;
 using System.Collections.Specialized;
 
-namespace LoginSystem
+namespace Dziennik
 {
     public class OnSignUpEventArgs : EventArgs
     {

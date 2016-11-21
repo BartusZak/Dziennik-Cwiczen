@@ -10,14 +10,9 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-namespace Dziennik
+namespace LoginSystem
 {
-    class Users
+    class SQL_connect
     {
-        
-        public int ID { get; set; }
-        public string FirstName { get; set; }
-        public string Email { get; set; }
-        public string Password { get; set; }
     }
 }

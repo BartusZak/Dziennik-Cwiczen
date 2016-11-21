@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("LoginSystem.Resource", IsApplication=true)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("Dziennik.Resource", IsApplication=true)]
 
-namespace LoginSystem
+namespace Dziennik
 {
 	
 	
@@ -79,16 +79,19 @@ namespace LoginSystem
 			public const int Icon = 2130837508;
 			
 			// aapt resource value: 0x7f020005
-			public const int mail_icon = 2130837509;
+			public const int logo_projekt = 2130837509;
 			
 			// aapt resource value: 0x7f020006
-			public const int ProgresBarStyle = 2130837510;
+			public const int mail_icon = 2130837510;
 			
 			// aapt resource value: 0x7f020007
-			public const int ProgressBarStyle = 2130837511;
+			public const int ProgresBarStyle = 2130837511;
 			
 			// aapt resource value: 0x7f020008
-			public const int xs = 2130837512;
+			public const int ProgressBarStyle = 2130837512;
+			
+			// aapt resource value: 0x7f020009
+			public const int xs = 2130837513;
 			
 			static Drawable()
 			{
@@ -109,23 +112,29 @@ namespace LoginSystem
 			// aapt resource value: 0x7f080003
 			public const int btnDialogEmail = 2131230723;
 			
-			// aapt resource value: 0x7f080011
-			public const int btnSignUp = 2131230737;
+			// aapt resource value: 0x7f080015
+			public const int btnSignUp = 2131230741;
 			
 			// aapt resource value: 0x7f080007
 			public const int btnZaloguj = 2131230727;
 			
+			// aapt resource value: 0x7f08000e
+			public const int button1 = 2131230734;
+			
+			// aapt resource value: 0x7f08000f
+			public const int button2 = 2131230735;
+			
+			// aapt resource value: 0x7f080010
+			public const int button3 = 2131230736;
+			
+			// aapt resource value: 0x7f080011
+			public const int button4 = 2131230737;
+			
 			// aapt resource value: 0x7f080013
-			public const int item_subtitle = 2131230739;
+			public const int imageView1 = 2131230739;
 			
-			// aapt resource value: 0x7f080014
-			public const int item_title = 2131230740;
-			
-			// aapt resource value: 0x7f080015
-			public const int menu = 2131230741;
-			
-			// aapt resource value: 0x7f080012
-			public const int progressBar1 = 2131230738;
+			// aapt resource value: 0x7f080017
+			public const int menu = 2131230743;
 			
 			// aapt resource value: 0x7f080009
 			public const int progressBarZaloguj = 2131230729;
@@ -133,20 +142,17 @@ namespace LoginSystem
 			// aapt resource value: 0x7f080004
 			public const int progressBar_sign_up = 2131230724;
 			
-			// aapt resource value: 0x7f08000b
-			public const int sample_content_fragment = 2131230731;
-			
 			// aapt resource value: 0x7f08000a
-			public const int sample_main_layout = 2131230730;
-			
-			// aapt resource value: 0x7f08000d
-			public const int sliding_tabs = 2131230733;
-			
-			// aapt resource value: 0x7f08000f
-			public const int txtCreateAccount = 2131230735;
+			public const int textView1 = 2131230730;
 			
 			// aapt resource value: 0x7f08000c
-			public const int txtCzyZalogowany = 2131230732;
+			public const int textView3 = 2131230732;
+			
+			// aapt resource value: 0x7f080016
+			public const int txtCopyright = 2131230742;
+			
+			// aapt resource value: 0x7f080012
+			public const int txtCreateAccount = 2131230738;
 			
 			// aapt resource value: 0x7f080001
 			public const int txtEmail = 2131230721;
@@ -157,8 +163,8 @@ namespace LoginSystem
 			// aapt resource value: 0x7f080000
 			public const int txtFirstName = 2131230720;
 			
-			// aapt resource value: 0x7f080010
-			public const int txtOr = 2131230736;
+			// aapt resource value: 0x7f080014
+			public const int txtOr = 2131230740;
 			
 			// aapt resource value: 0x7f080002
 			public const int txtPassword = 2131230722;
@@ -166,8 +172,11 @@ namespace LoginSystem
 			// aapt resource value: 0x7f080006
 			public const int txtPasswordZaloguj = 2131230726;
 			
-			// aapt resource value: 0x7f08000e
-			public const int viewpager = 2131230734;
+			// aapt resource value: 0x7f08000d
+			public const int txtUser_Email = 2131230733;
+			
+			// aapt resource value: 0x7f08000b
+			public const int txtUser_FirstName = 2131230731;
 			
 			static Id()
 			{
@@ -189,19 +198,10 @@ namespace LoginSystem
 			public const int dialog_zaloguj = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int dziennik2 = 2130903042;
+			public const int dziennik_main = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int dziennik_main = 2130903043;
-			
-			// aapt resource value: 0x7f030004
-			public const int fragment_sample = 2130903044;
-			
-			// aapt resource value: 0x7f030005
-			public const int Main = 2130903045;
-			
-			// aapt resource value: 0x7f030006
-			public const int pager_item = 2130903046;
+			public const int Main = 2130903043;
 			
 			static Layout()
 			{
@@ -234,6 +234,9 @@ namespace LoginSystem
 			
 			// aapt resource value: 0x7f050001
 			public const int ApplicationName = 2131034113;
+			
+			// aapt resource value: 0x7f050002
+			public const int BartusZak = 2131034114;
 			
 			// aapt resource value: 0x7f050000
 			public const int Hello = 2131034112;
