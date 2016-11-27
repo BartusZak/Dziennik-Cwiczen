@@ -68,7 +68,11 @@ namespace Dziennik
             if (User_ID != 0)
             {
                 txtSysLog.Text = User_ID.ToString();
+                ZalogujSuccess = true;                
                 Dismiss();
+
+                
+
             }
             else
             {

@@ -8,43 +8,65 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView1" />
+        android:id="@+id/textView1"
+        android:gravity="center"
+        android:layout_marginTop="50px" />
     <TextView
         android:text="User_FirstName"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/txtUser_FirstName" />
+        android:id="@+id/txtUser_FirstName"
+        android:gravity="center" />
     <TextView
         android:text="Email:"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView3" />
+        android:id="@+id/textView3"
+        android:gravity="center"
+        android:layout_marginTop="20px" />
     <TextView
         android:text="User_Email"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/txtUser_Email" />
+        android:id="@+id/txtUser_Email"
+        android:gravity="center" />
     <Button
         android:text="TWOJE ĆWICZENIA"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button1" />
+        android:id="@+id/btnTwojeCwiczenia"
+        android:background="@drawable/buttonsignupstyle"
+        android:layout_marginBottom="30px"
+        android:layout_marginTop="50px"
+        android:layout_marginLeft="40px"
+        android:layout_marginRight="40px" />
     <Button
         android:text="DODAJ ĆWICZENIE"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button2" />
+        android:id="@+id/btnDodajCwiczenie"
+        android:background="@drawable/buttonsignupstyle"
+        android:layout_marginBottom="30px"
+        android:layout_marginLeft="40px"
+        android:layout_marginRight="40px" />
     <Button
         android:text="USUŃ ĆWICZENIE"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button3" />
+        android:id="@+id/btnUsunCwiczenie"
+        android:background="@drawable/buttonsignupstyle"
+        android:layout_marginBottom="30px"
+        android:layout_marginLeft="40px"
+        android:layout_marginRight="40px" />
     <Button
-        android:text="Button"
+        android:text="WYLOGUJ SIĘ"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button4" />
+        android:id="@+id/btnWylogujSie"
+        android:background="@drawable/buttonsignupstyle"
+        android:layout_marginLeft="40px"
+        android:layout_marginRight="40px" />
 </LinearLayout>

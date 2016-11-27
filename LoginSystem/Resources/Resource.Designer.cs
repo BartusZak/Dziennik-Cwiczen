@@ -73,25 +73,31 @@ namespace Dziennik
 			public const int edit_text_style = 2130837506;
 			
 			// aapt resource value: 0x7f020003
-			public const int ic_action_overflow = 2130837507;
+			public const int ic_action_new = 2130837507;
 			
 			// aapt resource value: 0x7f020004
-			public const int Icon = 2130837508;
+			public const int ic_action_overflow = 2130837508;
 			
 			// aapt resource value: 0x7f020005
-			public const int logo_projekt = 2130837509;
+			public const int ic_action_person = 2130837509;
 			
 			// aapt resource value: 0x7f020006
-			public const int mail_icon = 2130837510;
+			public const int ic_action_search = 2130837510;
 			
 			// aapt resource value: 0x7f020007
-			public const int ProgresBarStyle = 2130837511;
+			public const int Icon = 2130837511;
 			
 			// aapt resource value: 0x7f020008
-			public const int ProgressBarStyle = 2130837512;
+			public const int logo_projekt = 2130837512;
 			
 			// aapt resource value: 0x7f020009
-			public const int xs = 2130837513;
+			public const int mail_icon = 2130837513;
+			
+			// aapt resource value: 0x7f02000a
+			public const int ProgresBarStyle = 2130837514;
+			
+			// aapt resource value: 0x7f02000b
+			public const int ProgressBarStyle = 2130837515;
 			
 			static Drawable()
 			{
@@ -106,77 +112,101 @@ namespace Dziennik
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f080008
-			public const int XtxtSysLog = 2131230728;
+			// aapt resource value: 0x7f08000c
+			public const int XtxtSysLog = 2131230732;
+			
+			// aapt resource value: 0x7f08001f
+			public const int add = 2131230751;
 			
 			// aapt resource value: 0x7f080003
-			public const int btnDialogEmail = 2131230723;
+			public const int btnDialogDodajCwiczenie = 2131230723;
 			
-			// aapt resource value: 0x7f080015
-			public const int btnSignUp = 2131230741;
+			// aapt resource value: 0x7f080008
+			public const int btnDialogEmail = 2131230728;
 			
-			// aapt resource value: 0x7f080007
-			public const int btnZaloguj = 2131230727;
+			// aapt resource value: 0x7f080014
+			public const int btnDodajCwiczenie = 2131230740;
 			
-			// aapt resource value: 0x7f08000e
-			public const int button1 = 2131230734;
+			// aapt resource value: 0x7f08001a
+			public const int btnSignUp = 2131230746;
 			
-			// aapt resource value: 0x7f08000f
-			public const int button2 = 2131230735;
-			
-			// aapt resource value: 0x7f080010
-			public const int button3 = 2131230736;
-			
-			// aapt resource value: 0x7f080011
-			public const int button4 = 2131230737;
+			// aapt resource value: 0x7f08001d
+			public const int btnStar = 2131230749;
 			
 			// aapt resource value: 0x7f080013
-			public const int imageView1 = 2131230739;
+			public const int btnTwojeCwiczenia = 2131230739;
 			
-			// aapt resource value: 0x7f080017
-			public const int menu = 2131230743;
+			// aapt resource value: 0x7f080015
+			public const int btnUsunCwiczenie = 2131230741;
 			
-			// aapt resource value: 0x7f080009
-			public const int progressBarZaloguj = 2131230729;
+			// aapt resource value: 0x7f080016
+			public const int btnWylogujSie = 2131230742;
+			
+			// aapt resource value: 0x7f08000b
+			public const int btnZaloguj = 2131230731;
+			
+			// aapt resource value: 0x7f080018
+			public const int imageView1 = 2131230744;
+			
+			// aapt resource value: 0x7f08001c
+			public const int imgPic = 2131230748;
+			
+			// aapt resource value: 0x7f08000e
+			public const int listView = 2131230734;
+			
+			// aapt resource value: 0x7f08000d
+			public const int progressBarZaloguj = 2131230733;
 			
 			// aapt resource value: 0x7f080004
 			public const int progressBar_sign_up = 2131230724;
 			
-			// aapt resource value: 0x7f08000a
-			public const int textView1 = 2131230730;
+			// aapt resource value: 0x7f08001e
+			public const int search = 2131230750;
 			
-			// aapt resource value: 0x7f08000c
-			public const int textView3 = 2131230732;
+			// aapt resource value: 0x7f08000f
+			public const int textView1 = 2131230735;
 			
-			// aapt resource value: 0x7f080016
-			public const int txtCopyright = 2131230742;
+			// aapt resource value: 0x7f080011
+			public const int textView3 = 2131230737;
 			
-			// aapt resource value: 0x7f080012
-			public const int txtCreateAccount = 2131230738;
+			// aapt resource value: 0x7f08001b
+			public const int txtCopyright = 2131230747;
 			
-			// aapt resource value: 0x7f080001
-			public const int txtEmail = 2131230721;
-			
-			// aapt resource value: 0x7f080005
-			public const int txtEmailZaloguj = 2131230725;
+			// aapt resource value: 0x7f080017
+			public const int txtCreateAccount = 2131230743;
 			
 			// aapt resource value: 0x7f080000
-			public const int txtFirstName = 2131230720;
-			
-			// aapt resource value: 0x7f080014
-			public const int txtOr = 2131230740;
-			
-			// aapt resource value: 0x7f080002
-			public const int txtPassword = 2131230722;
+			public const int txtCwiczenie = 2131230720;
 			
 			// aapt resource value: 0x7f080006
-			public const int txtPasswordZaloguj = 2131230726;
+			public const int txtEmail = 2131230726;
 			
-			// aapt resource value: 0x7f08000d
-			public const int txtUser_Email = 2131230733;
+			// aapt resource value: 0x7f080009
+			public const int txtEmailZaloguj = 2131230729;
 			
-			// aapt resource value: 0x7f08000b
-			public const int txtUser_FirstName = 2131230731;
+			// aapt resource value: 0x7f080005
+			public const int txtFirstName = 2131230725;
+			
+			// aapt resource value: 0x7f080002
+			public const int txtIloscPowtorzen = 2131230722;
+			
+			// aapt resource value: 0x7f080001
+			public const int txtIloscSerii = 2131230721;
+			
+			// aapt resource value: 0x7f080019
+			public const int txtOr = 2131230745;
+			
+			// aapt resource value: 0x7f080007
+			public const int txtPassword = 2131230727;
+			
+			// aapt resource value: 0x7f08000a
+			public const int txtPasswordZaloguj = 2131230730;
+			
+			// aapt resource value: 0x7f080012
+			public const int txtUser_Email = 2131230738;
+			
+			// aapt resource value: 0x7f080010
+			public const int txtUser_FirstName = 2131230736;
 			
 			static Id()
 			{
@@ -192,16 +222,25 @@ namespace Dziennik
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int dialog_sign_up = 2130903040;
+			public const int dialog_dodaj_cwiczenie = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int dialog_zaloguj = 2130903041;
+			public const int dialog_sign_up = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int dziennik_main = 2130903042;
+			public const int dialog_zaloguj = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int Main = 2130903043;
+			public const int dziennik_dodaj = 2130903043;
+			
+			// aapt resource value: 0x7f030004
+			public const int dziennik_main = 2130903044;
+			
+			// aapt resource value: 0x7f030005
+			public const int Main = 2130903045;
+			
+			// aapt resource value: 0x7f030006
+			public const int row_cwiczenie = 2130903046;
 			
 			static Layout()
 			{
@@ -217,7 +256,7 @@ namespace Dziennik
 		{
 			
 			// aapt resource value: 0x7f070000
-			public const int actionbar_main = 2131165184;
+			public const int actionbar = 2131165184;
 			
 			static Menu()
 			{

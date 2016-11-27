@@ -15,7 +15,7 @@ namespace Dziennik
 {
     class DBConnect : dialog_zaloguj
     {
-        private MySqlConnection connection;
+        protected internal MySqlConnection connection;
         private string server;
         private string database;
         private string uid;
@@ -29,7 +29,7 @@ namespace Dziennik
         }
 
         //Initialize values
-        private void Initialize()
+        protected internal void Initialize()
         {
             server = "bartuszak.pl";
             database = "android";
@@ -42,7 +42,7 @@ namespace Dziennik
         }
 
         //open connection to database
-        private bool OpenConnection()
+        protected internal bool OpenConnection()
         {
             try
             {
@@ -71,7 +71,7 @@ namespace Dziennik
         }
 
         //Close connection
-        private bool CloseConnection()
+        protected internal bool CloseConnection()
         {
             try
             {

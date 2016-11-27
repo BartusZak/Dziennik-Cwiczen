@@ -17,7 +17,7 @@ using System.Data;
 
 namespace Dziennik
 {
-    [Activity(Label = "Dziennik Treningowy", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "Dziennik Treningowy", MainLauncher = true, Icon = "@drawable/icon", NoHistory = true)]
     public class MainActivity : Activity
     {
         //Deklaracja zmiennych
@@ -27,9 +27,11 @@ namespace Dziennik
         //Główny kod api
         protected override void OnCreate(Bundle bundle)
         {
+            RequestWindowFeature(WindowFeatures.NoTitle);
             base.OnCreate(bundle);
 
             // Ustawiam ekran głowny na:
+
             SetContentView (Resource.Layout.Main);
 
 
@@ -81,7 +83,9 @@ namespace Dziennik
         {
          
 
-        }   
+        }
+
+        
     }
 }
 
