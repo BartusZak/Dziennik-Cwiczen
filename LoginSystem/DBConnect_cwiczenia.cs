@@ -16,11 +16,10 @@ namespace Dziennik
     class DBConnect_cwiczenia : DBConnect
     {
         //Insert statement
-        public int Insert_cwiczenie_return_cwicznie_id(string Cwiczenie_Nazwa, string Cwiczenie_IloscSerii, string Cwiczenie_IloscPowtorzen)
+        public void Insert_cwiczenie(string Cwiczenie_Nazwa, string Cwiczenie_IloscSerii, string Cwiczenie_IloscPowtorzen)
         {
-            int Cwiczenie_ID = 0;
-            string query = "INSERT INTO Cwiczenia (User_ID,Cwiczenie_Nazwa,Cwiczenie_IloscSerii,Cwiczenie_IloscPowtorzen) VALUES(" + User_ID + ",'" + Cwiczenie_Nazwa + "','" + Cwiczenie_IloscSerii + "','" + Cwiczenie_IloscPowtorzen + "')";
-            string query2 = "SELECT IDENT_CURRENT('Cwiczenia') AS Cwiczenie_ID";
+            string query = "INSERT INTO Cwiczenia (User_ID,Cwiczenie_Nazwa,Cwiczenie_IloscSerii,Cwiczenie_IloscPowtorzen) VALUES("+ User_ID + ",'"+Cwiczenie_Nazwa+"','"+Cwiczenie_IloscSerii+"','"+Cwiczenie_IloscPowtorzen+"')";
+
             //open connection
             if (this.OpenConnection() == true)
             {
@@ -30,17 +29,9 @@ namespace Dziennik
                 //Execute command
                 cmd.ExecuteNonQuery();
 
-                MySqlCommand cmd2 = new MySqlCommand(query2, connection);
-                MySqlDataReader dataReader = cmd2.ExecuteReader();
-
-                Cwiczenie_ID = (int)dataReader["Cwiczenie_ID"];
-
-                //close Data Reader
-                dataReader.Close();
                 //close connection
                 this.CloseConnection();
             }
-            return Cwiczenie_ID;
         }
 
         //Select statement
@@ -69,8 +60,8 @@ namespace Dziennik
                         Cwiczenie_v = dataReader["Cwiczenie_Nazwa"] as String,
                         IloscSerii_v = dataReader["Cwiczenie_IloscSerii"] as String,
                         IloscPowtorzen_v = dataReader["Cwiczenie_IloscPowtorzen"] as String,
-                        // Image = dataReader["Ikona"] as byte []
-
+                       // Image = dataReader["Ikona"] as byte []
+                       
                     };
                     list.Add(record);
                 }
@@ -91,10 +82,10 @@ namespace Dziennik
         }
 
         //Update statement
-        public void Update_Image(string img)
+        public void Update()
         {
-            string query = "UPDATE Cwiczenia SET Cwiczenie_img=CONVERT(VARBINARY(MAX)," + img + ") WHERE User_ID=" + User_ID;
-            Initialize();
+            string query = "UPDATE tableinfo SET name='Joe', age='22' WHERE name='John Smith'";
+
             //Open connection
             if (this.OpenConnection() == true)
             {
