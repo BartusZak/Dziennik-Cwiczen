@@ -14,10 +14,11 @@ namespace Dziennik
 {
     class Cwiczenie
     {
+        public int ID { get; set; }
         public string Cwiczenie_v { get; set; }
         public string IloscSerii_v { get; set; }
         public string IloscPowtorzen_v { get; set; }
-        public byte [] Image {get; set;}
+        public byte[] Image { get; set; }
 
     }
 }

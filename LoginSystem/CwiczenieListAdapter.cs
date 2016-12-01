@@ -20,7 +20,7 @@ namespace Dziennik
         private List<Cwiczenie> mCwiczenia;
         private Action<ImageView> mActionPicSelected;
 
-        public CwiczenieListAdapter (Context context, int layout, List<Cwiczenie> contacts, Action<ImageView> picSelected)
+        public CwiczenieListAdapter(Context context, int layout, List<Cwiczenie> contacts, Action<ImageView> picSelected)
         {
             mContext = context;
             mLayout = layout;
@@ -63,6 +63,7 @@ namespace Dziennik
                 pic.SetImageBitmap(BitmapFactory.DecodeByteArray(mCwiczenia[position].Image, 0, mCwiczenia[position].Image.Length));
             }
 
+            pic.Tag = position;
             pic.Click -= pic_Click;
             pic.Click += pic_Click;
             return row;

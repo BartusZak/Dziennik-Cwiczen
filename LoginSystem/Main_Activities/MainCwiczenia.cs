@@ -20,11 +20,13 @@ namespace Dziennik
         private ListView mListView;
         private BaseAdapter<Cwiczenie> mAdapter;
         private List<Cwiczenie> mCwiczenia;
+        private List<Cwiczenie> mCwiczenia2;
         private ImageView mSelectedPic;
+        private DBConnect_cwiczenia dbConnect_cwiczenia;
 
         protected override void OnCreate(Bundle bundle)
         {
-            
+
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.dziennik_dodaj);
 
@@ -36,10 +38,14 @@ namespace Dziennik
             mAdapter = new CwiczenieListAdapter(this, Resource.Layout.row_cwiczenie, mCwiczenia, action);
             mListView.Adapter = mAdapter;
 
-           
-        } 
+            dbConnect_cwiczenia = new DBConnect_cwiczenia();
+            mCwiczenia2 = dbConnect_cwiczenia.Select_Cwiczenia_Wszystkie();
 
-        private void PicSelected (ImageView selectedPic)
+            mCwiczenia.AddRange(mCwiczenia2);
+
+        }
+
+        private void PicSelected(ImageView selectedPic)
         {
             mSelectedPic = selectedPic;
             Intent intent = new Intent();
@@ -54,9 +60,53 @@ namespace Dziennik
 
             if (resultCode == Result.Ok)
             {
+                int cwiczenieID = mCwiczenia[(int)mSelectedPic.Tag].ID;
                 Stream stream = ContentResolver.OpenInputStream(data.Data);
-                mSelectedPic.SetImageBitmap(BitmapFactory.DecodeStream(stream));
+                mSelectedPic.SetImageBitmap(DecodeBitmapFromStream(data.Data, 150, 150));
+
+                //przygotowania do wyslania bitmapy do sql
+                Bitmap bitmap = BitmapFactory.DecodeStream(stream);
+                MemoryStream memStream = new MemoryStream();
+                bitmap.Compress(Bitmap.CompressFormat.Webp, 100, memStream);
+                byte[] picData = memStream.ToArray();
+
+                //DBConnect_cwiczenia.Update_Image(Convert.ToBase64String(picData));
             }
+        }
+
+        private Bitmap DecodeBitmapFromStream(Android.Net.Uri data, int requestedWidth, int requestedHeight)
+        {
+            Stream stream = ContentResolver.OpenInputStream(data);
+            BitmapFactory.Options options = new BitmapFactory.Options();
+            options.InJustDecodeBounds = true;
+            BitmapFactory.DecodeStream(stream);
+
+            options.InSampleSize = CalculateInSampleSize(options, requestedWidth, requestedHeight);
+
+            stream = ContentResolver.OpenInputStream(data);
+            options.InJustDecodeBounds = false;
+            Bitmap bitmap = BitmapFactory.DecodeStream(stream, null, options);
+            return bitmap;
+        }
+
+        private int CalculateInSampleSize(BitmapFactory.Options options, int requestedWidth, int requestedHight)
+        {
+            int height = options.OutHeight;
+            int width = options.OutWidth;
+            int InSampleSize = 1;
+
+            if (height > requestedWidth || width > requestedWidth)
+            {
+                // obrazek jest wiekszy niz powinien
+                int halfHeight = height / 2;
+                int halfWidth = width / 2;
+
+                while ((halfHeight / InSampleSize) > requestedHight && (halfWidth / InSampleSize) > requestedWidth)
+                {
+                    InSampleSize *= 2;
+                }
+            }
+            return InSampleSize;
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -77,20 +127,20 @@ namespace Dziennik
                     //Subscribe to event
                     dialog.OnDodajCwiczenie += dialog_OnDodajCwiczenie;
                     dialog.Show(transaction, "dodaj cwiczenie");
-                    return true;    
-                
+                    return true;
+
                 default:
                     return base.OnOptionsItemSelected(item);
             }
-           
+
         }
 
         void dialog_OnDodajCwiczenie(object sender, DodajCwiczenieEventArgs e)
         {
             mCwiczenia.Add(new Cwiczenie() { Cwiczenie_v = e.Cwiczenie, IloscSerii_v = e.IloscSerii, IloscPowtorzen_v = e.IloscPowtorzen });
-            
+
             mAdapter.NotifyDataSetChanged();
-            
+
         }
     }
 }

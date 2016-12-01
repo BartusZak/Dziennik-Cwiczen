@@ -14,13 +14,15 @@ namespace Dziennik
 {
     public class DodajCwiczenieEventArgs : EventArgs
     {
+        public int ID { get; set; }
         public string Cwiczenie { get; set; }
         public string IloscSerii { get; set; }
         public string IloscPowtorzen { get; set; }
-        
 
-        public DodajCwiczenieEventArgs(string cwiczenie, string iloscSerii, string iloscPowtorzen)
+
+        public DodajCwiczenieEventArgs(int id, string cwiczenie, string iloscSerii, string iloscPowtorzen)
         {
+            ID = id;
             Cwiczenie = cwiczenie;
             IloscSerii = iloscSerii;
             IloscPowtorzen = iloscPowtorzen;
@@ -49,21 +51,22 @@ namespace Dziennik
 
             mButtOnDodajCwiczenie.Click += mButtOnDodajCwiczenie_Click;
             return view;
-           
+
         }
 
         void mButtOnDodajCwiczenie_Click(object sender, EventArgs e)
         {
-           if (OnDodajCwiczenie != null)
-           {
+            if (OnDodajCwiczenie != null)
+            {
                 //Broadcast event
                 dbConnect_cwiczenia = new DBConnect_cwiczenia();
-                dbConnect_cwiczenia.Insert_cwiczenie(txtCwiczenie.Text, txtIloscSerii.Text, txtIloscPowtorzen.Text);
+                int newID = dbConnect_cwiczenia.Insert_cwiczenie_return_cwicznie_id(txtCwiczenie.Text, txtIloscSerii.Text, txtIloscPowtorzen.Text);
 
-                OnDodajCwiczenie.Invoke(this, new DodajCwiczenieEventArgs(txtCwiczenie.Text, txtIloscSerii.Text, txtIloscPowtorzen.Text));              
-           }
 
-           this.Dismiss();
+                OnDodajCwiczenie.Invoke(this, new DodajCwiczenieEventArgs(newID, txtCwiczenie.Text, txtIloscSerii.Text, txtIloscPowtorzen.Text));
+            }
+
+            this.Dismiss();
         }
 
         public override void OnActivityCreated(Bundle savedInstanceState)
