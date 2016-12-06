@@ -64,21 +64,23 @@ namespace Dziennik
             User_ID = dbConnect.Select_User_ID(txtEmailZaloguj.Text, txtPasswordZaloguj.Text);
             User_FirstName = dbConnect.Select_User_FirstName(User_ID);
             User_Email = dbConnect.Select_User_Email(User_ID);
-            
+
             if (User_ID != 0)
             {
                 txtSysLog.Text = User_ID.ToString();
-                ZalogujSuccess = true;                
+                ZalogujSuccess = true;
                 Dismiss();
 
-                
+
 
             }
             else
             {
                 txtSysLog.Text = "U¿ytkownik nie istnieje!";
             }
-            
+
+            //txtSysLog.Text = "Co tu sie odjebuje!";
+
         }
                
         //Tworzê metodê nadpisuj¹c¹, która wykonujê sie przed wyœwietleniem dialogu

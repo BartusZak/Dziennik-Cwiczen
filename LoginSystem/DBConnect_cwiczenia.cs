@@ -69,53 +69,6 @@ namespace Dziennik
                         Cwiczenie_v = dataReader["Cwiczenie_Nazwa"] as String,
                         IloscSerii_v = dataReader["Cwiczenie_IloscSerii"] as String,
                         IloscPowtorzen_v = dataReader["Cwiczenie_IloscPowtorzen"] as String,
-                        // Image = dataReader["Ikona"] as byte []
-
-                    };
-                    list.Add(record);
-                }
-
-                //close Data Reader
-                dataReader.Close();
-
-                //close Connection
-                this.CloseConnection();
-
-                //return list to be displayed
-                return list;
-            }
-            else
-            {
-                return list;
-            }
-        }
-
-        //Select statement
-        public List<Cwiczenie> Select_Cwiczenia_Wszystkie()
-        {
-            string query = "SELECT Cwiczenie_Nazwa,Cwiczenie_IloscSerii,Cwiczenie_IloscPowtorzen FROM Cwiczenia WHERE User_ID=" + User_ID;
-            Initialize();
-
-            //Create a list to store the result
-            List<Cwiczenie> list = new List<Cwiczenie>();
-
-            //Open connection
-            if (this.OpenConnection() == true)
-            {
-                //Create Command
-                MySqlCommand cmd = new MySqlCommand(query, connection);
-                //Create a data reader and Execute the command
-                MySqlDataReader dataReader = cmd.ExecuteReader();
-
-                //Read the data and store them in the list
-                Cwiczenie record;
-                while (dataReader.Read())
-                {
-                    record = new Cwiczenie()
-                    {
-                        Cwiczenie_v = dataReader["Cwiczenie_Nazwa"] as String,
-                        IloscSerii_v = dataReader["Cwiczenie_IloscSerii"] as String,
-                        IloscPowtorzen_v = dataReader["Cwiczenie_IloscPowtorzen"] as String,
                        // Image = dataReader["Ikona"] as byte []
                        
                     };
@@ -138,9 +91,9 @@ namespace Dziennik
         }
 
         //Update statement
-        public void Update_Image(string img)
+         public  void Update_Image(byte[] img, int cwiczenie_ID)
         {
-            string query = "UPDATE Cwiczenia SET Cwiczenie_img=CONVERT(VARBINARY(MAX)," + img + ") WHERE User_ID=" + User_ID;
+            string query = "UPDATE Cwiczenia SET Cwiczenie_Nazwa='bartek' WHERE Cwiczenie_ID='65'" ;
             Initialize();
             //Open connection
             if (this.OpenConnection() == true)

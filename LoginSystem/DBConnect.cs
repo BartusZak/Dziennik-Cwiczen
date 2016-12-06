@@ -34,7 +34,7 @@ namespace Dziennik
             server = "bartuszak.pl";
             database = "android";
             uid = "android";
-            password = "hbsUu6yRdx6Xa4vx";
+            password = "Bartek123";
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
 

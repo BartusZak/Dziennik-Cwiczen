@@ -9,6 +9,8 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using System.Net;
+using System.Collections.Specialized;
 
 namespace Dziennik
 {
@@ -56,18 +58,48 @@ namespace Dziennik
 
         void mButtOnDodajCwiczenie_Click(object sender, EventArgs e)
         {
-            if (OnDodajCwiczenie != null)
-            {
+            
+                WebClient client = new WebClient();
+                Uri uri = new Uri("http://bartuszak.pl/android/CreateCwiczenie.php");
+                NameValueCollection parameters = new NameValueCollection();
+
+                parameters.Add("Cwiczenie", txtCwiczenie.Text);
+                parameters.Add("IloscSerii", txtIloscSerii.Text);
+                parameters.Add("IloscPowtorzen", txtIloscPowtorzen.Text);
+                parameters.Add("User_ID", dialog_zaloguj.User_ID.ToString());
+
+            client.UploadValuesCompleted += client_UploadValuesCompleted;
+                client.UploadValuesAsync(uri, parameters);
+
+
                 //Broadcast event
-                dbConnect_cwiczenia = new DBConnect_cwiczenia();
-                int newID = dbConnect_cwiczenia.Insert_cwiczenie_return_cwicznie_id(txtCwiczenie.Text, txtIloscSerii.Text, txtIloscPowtorzen.Text);
+                // dbConnect_cwiczenia = new DBConnect_cwiczenia();
+                //int newID = dbConnect_cwiczenia.Insert_cwiczenie_return_cwicznie_id(txtCwiczenie.Text, txtIloscSerii.Text, txtIloscPowtorzen.Text);
 
-
-                OnDodajCwiczenie.Invoke(this, new DodajCwiczenieEventArgs(newID, txtCwiczenie.Text, txtIloscSerii.Text, txtIloscPowtorzen.Text));
-            }
-
-            this.Dismiss();
+                // OnDodajCwiczenie.Invoke(this, new DodajCwiczenieEventArgs(newID, txtCwiczenie.Text, txtIloscSerii.Text, txtIloscPowtorzen.Text));           
         }
+
+        void client_UploadValuesCompleted(object sender, UploadValuesCompletedEventArgs e)
+        {
+            Activity.RunOnUiThread(() =>
+            {
+                string id = Encoding.UTF8.GetString(e.Result); //Get the data echo backed from PHP
+                int newID = 0;
+
+                int.TryParse(id, out newID); //Cast the id to an integer
+
+                if (OnDodajCwiczenie != null)
+                {
+                    //Broadcast event
+                    OnDodajCwiczenie.Invoke(this, new DodajCwiczenieEventArgs(newID, txtCwiczenie.Text, txtIloscSerii.Text, txtIloscPowtorzen.Text));
+                }
+
+
+                this.Dismiss();
+            });
+
+        }
+
 
         public override void OnActivityCreated(Bundle savedInstanceState)
         {
