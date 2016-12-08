@@ -22,9 +22,8 @@ namespace Dziennik
         public string IloscPowtorzen { get; set; }
 
 
-        public DodajCwiczenieEventArgs(int id, string cwiczenie, string iloscSerii, string iloscPowtorzen)
+        public DodajCwiczenieEventArgs( string cwiczenie, string iloscSerii, string iloscPowtorzen)
         {
-            ID = id;
             Cwiczenie = cwiczenie;
             IloscSerii = iloscSerii;
             IloscPowtorzen = iloscPowtorzen;
@@ -58,44 +57,44 @@ namespace Dziennik
 
         void mButtOnDodajCwiczenie_Click(object sender, EventArgs e)
         {
-            
-                WebClient client = new WebClient();
-                Uri uri = new Uri("http://bartuszak.pl/android/CreateCwiczenie.php");
-                NameValueCollection parameters = new NameValueCollection();
 
-                parameters.Add("Cwiczenie", txtCwiczenie.Text);
-                parameters.Add("IloscSerii", txtIloscSerii.Text);
-                parameters.Add("IloscPowtorzen", txtIloscPowtorzen.Text);
-                parameters.Add("User_ID", MainActivity.User_ID.ToString());
+            //    WebClient client = new WebClient();
+            //    Uri uri = new Uri("http://bartuszak.pl/android/CreateCwiczenie.php");
+            //    NameValueCollection parameters = new NameValueCollection();
 
-            client.UploadValuesCompleted += client_UploadValuesCompleted;
-                client.UploadValuesAsync(uri, parameters);
+            //    parameters.Add("Cwiczenie", txtCwiczenie.Text);
+            //    parameters.Add("IloscSerii", txtIloscSerii.Text);
+            //    parameters.Add("IloscPowtorzen", txtIloscPowtorzen.Text);
+            //    parameters.Add("User_ID", MainActivity.User_ID.ToString());
+
+            //client.UploadValuesCompleted += client_UploadValuesCompleted;
+            //    client.UploadValuesAsync(uri, parameters);
 
 
-                //Broadcast event
-                // dbConnect_cwiczenia = new DBConnect_cwiczenia();
-                //int newID = dbConnect_cwiczenia.Insert_cwiczenie_return_cwicznie_id(txtCwiczenie.Text, txtIloscSerii.Text, txtIloscPowtorzen.Text);
+            //Broadcast event
+             dbConnect_cwiczenia = new DBConnect_cwiczenia();
+        dbConnect_cwiczenia.Insert_cwiczenie_return_cwicznie_id(txtCwiczenie.Text, txtIloscSerii.Text, txtIloscPowtorzen.Text);
 
-                // OnDodajCwiczenie.Invoke(this, new DodajCwiczenieEventArgs(newID, txtCwiczenie.Text, txtIloscSerii.Text, txtIloscPowtorzen.Text));           
+        OnDodajCwiczenie.Invoke(this, new DodajCwiczenieEventArgs(txtCwiczenie.Text, txtIloscSerii.Text, txtIloscPowtorzen.Text));           
         }
 
-        void client_UploadValuesCompleted(object sender, UploadValuesCompletedEventArgs e)
+    void client_UploadValuesCompleted(object sender, UploadValuesCompletedEventArgs e)
         {
             Activity.RunOnUiThread(() =>
             {
-                string id = Encoding.UTF8.GetString(e.Result); //Get the data echo backed from PHP
-                int newID = 0;
+                //string id = Encoding.UTF8.GetString(e.Result); //Get the data echo backed from PHP
+                //int newID = 0;
 
-                int.TryParse(id, out newID); //Cast the id to an integer
+                //int.TryParse(id, out newID); //Cast the id to an integer
 
                 if (OnDodajCwiczenie != null)
                 {
                     //Broadcast event
-                    OnDodajCwiczenie.Invoke(this, new DodajCwiczenieEventArgs(newID, txtCwiczenie.Text, txtIloscSerii.Text, txtIloscPowtorzen.Text));
+                    OnDodajCwiczenie.Invoke(this, new DodajCwiczenieEventArgs( txtCwiczenie.Text, txtIloscSerii.Text, txtIloscPowtorzen.Text));
+                    Dismiss();
                 }
 
-
-                this.Dismiss();
+               
             });
 
         }
