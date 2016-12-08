@@ -72,9 +72,8 @@ namespace Dziennik
                 MemoryStream memStream = new MemoryStream();
                 bitmap.Compress(Bitmap.CompressFormat.Webp, 100, memStream);
                 picData = memStream.ToArray();
-
-                Update_Image(picData, contactID);
-
+           
+                //Probowalem z przeslanie obrazka do bazy MySql - nie wyszlo
                // DBConnect_cwiczenia img = new DBConnect_cwiczenia();
                //img.Update_Image(picData,contactID);
 
@@ -90,77 +89,7 @@ namespace Dziennik
                 // client.UploadValuesCompleted += client_UploadValuesCompleted;
             }
         }
-        //Update statement
-        public void Update_Image(byte[] img, int cwiczenie_ID)
-        {
-            string query = "UPDATE Cwiczenia SET Cwiczenie_Nazwa='bartek' WHERE Cwiczenie_ID='65'";
-            
-            string server = "bartuszak.pl";
-            string database = "android";
-           string  uid = "android";
-           string password = "hbsUu6yRdx6Xa4vx";
-            string connectionString;
-            connectionString = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
-
-            connection = new MySqlConnection(connectionString);
-
-            //Open connection
-            if (this.OpenConnection() == true)
-            {
-                //create mysql command
-                MySqlCommand cmd = new MySqlCommand();
-                //Assign the query using CommandText
-                cmd.CommandText = query;
-                //Assign the connection using Connection
-                cmd.Connection = connection;
-
-                //Execute query
-                cmd.ExecuteNonQuery();
-
-                //close connection
-                this.CloseConnection();
-            }
-        }
-        protected internal bool CloseConnection()
-        {
-            try
-            {
-                connection.Close();
-                return true;
-            }
-            catch (MySqlException ex)
-            {
-               // txtSysLog.Text = ex.Message;
-                return false;
-            }
-        }
-        protected internal bool OpenConnection()
-        {
-            try
-            {
-                connection.Open();
-                return true;
-            }
-            catch (MySqlException ex)
-            {
-                //When handling errors, you can your application's response based 
-                //on the error number.
-                //The two most common error numbers when connecting are as follows:
-                //0: Cannot connect to server.
-                //1045: Invalid user name and/or password.
-                switch (ex.Number)
-                {
-                    case 0:
-                       // txtSysLog.Text = "Cannot connect to server.  Contact administrator";
-                        break;
-
-                    case 1045:
-                       // txtSysLog.Text = "Invalid username/password, please try again";
-                        break;
-                }
-                return false;
-            }
-        }
+        
 
         void client_UploadValuesCompleted(object sender, UploadValuesCompletedEventArgs e)
         {
