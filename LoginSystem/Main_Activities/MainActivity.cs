@@ -23,7 +23,16 @@ namespace Dziennik
         //Deklaracja zmiennych
         private Button mBtSignUp;
         private Button mBtZaloguj;
-        
+
+        public static int User_ID;
+        public static string User_FirstName;
+        public static string User_Email;
+
+        protected internal EditText txtEmailZaloguj;
+        protected internal EditText txtPasswordZaloguj;
+        private DBConnect dbConnect;
+        protected internal TextView txtSysLog;
+
         //Główny kod api
         protected override void OnCreate(Bundle bundle)
         {
@@ -38,25 +47,46 @@ namespace Dziennik
 
             //------------------------------------------------------------------------------------------------------
             //Przypisuje event do przycisku "Zaloguj się" (referecnja do .axml)
+            txtEmailZaloguj = FindViewById<EditText>(Resource.Id.txtEmailZalogujMain);
+            txtPasswordZaloguj = FindViewById<EditText>(Resource.Id.txtPasswordZalogujMain);
+            txtSysLog = FindViewById<TextView>(Resource.Id.XtxtSysLogMain);
             mBtZaloguj = FindViewById<Button>(Resource.Id.btnZaloguj);
 
-           
+            
+
+
 
             //Tworze Click Event dla przyciusku "Zaloguj sie" (wykorzystuje metode anonimową)
             mBtZaloguj.Click += (object sender, EventArgs args) =>
             {
-               if (dialog_zaloguj.ZalogujSuccess)
+                //Co się dzieje po wciśnieciu przycisku "Zaloguj!"
+                dbConnect = new DBConnect();
+
+                User_ID = dbConnect.Select_User_ID(txtEmailZaloguj.Text, txtPasswordZaloguj.Text);
+                User_FirstName = dbConnect.Select_User_FirstName(User_ID);
+                User_Email = dbConnect.Select_User_Email(User_ID);
+
+                if (User_ID != 0)
                 {
                     StartActivity(typeof(otworz_dziennik_activity));
                 }
-               else
-               {
-                    //Wyswietlanie dilogu do logowania
-                    FragmentTransaction zaloguj_tran = FragmentManager.BeginTransaction();
-                    dialog_zaloguj zalogujDialog = new dialog_zaloguj();
-                    zalogujDialog.Show(zaloguj_tran, "dialog logowania");
+                else
+                {
+                    txtSysLog.Text = "Użytkownik nie istnieje!";
                 }
-
+                /* Tutaj korzystałem z dialogu do logowania, ale nie potrafilem rozwiązać problemu z uruchomienime nowej activity a dialogform
+                if (dialog_zaloguj.ZalogujSuccess)
+                 {
+                     StartActivity(typeof(otworz_dziennik_activity));
+                 }
+                else
+                {
+                     //Wyswietlanie dilogu do logowania
+                     FragmentTransaction zaloguj_tran = FragmentManager.BeginTransaction();
+                     dialog_zaloguj zalogujDialog = new dialog_zaloguj();
+                     zalogujDialog.Show(zaloguj_tran, "dialog logowania");
+                 }
+                 */
             };
           
 

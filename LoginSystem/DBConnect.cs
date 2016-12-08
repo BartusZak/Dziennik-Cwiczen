@@ -13,7 +13,7 @@ using MySql.Data.MySqlClient;
 
 namespace Dziennik
 {
-    class DBConnect : dialog_zaloguj
+    class DBConnect : MainActivity
     {
         protected internal MySqlConnection connection;
         private string server;

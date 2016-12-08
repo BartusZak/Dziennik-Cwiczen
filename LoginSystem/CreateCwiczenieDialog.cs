@@ -66,7 +66,7 @@ namespace Dziennik
                 parameters.Add("Cwiczenie", txtCwiczenie.Text);
                 parameters.Add("IloscSerii", txtIloscSerii.Text);
                 parameters.Add("IloscPowtorzen", txtIloscPowtorzen.Text);
-                parameters.Add("User_ID", dialog_zaloguj.User_ID.ToString());
+                parameters.Add("User_ID", MainActivity.User_ID.ToString());
 
             client.UploadValuesCompleted += client_UploadValuesCompleted;
                 client.UploadValuesAsync(uri, parameters);

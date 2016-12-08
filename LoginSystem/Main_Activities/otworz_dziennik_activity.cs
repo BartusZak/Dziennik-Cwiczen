@@ -34,8 +34,8 @@ namespace Dziennik
             txtUser_Email = FindViewById<TextView>(Resource.Id.txtUser_Email);
 
             //inicjalizcja pol uzytkonika
-            txtUser_FirstName.Text = dialog_zaloguj.User_FirstName;
-            txtUser_Email.Text = dialog_zaloguj.User_Email;
+            txtUser_FirstName.Text = MainActivity.User_FirstName;
+            txtUser_Email.Text = MainActivity.User_Email;
 
             //buttons
             btnWylogujSie = FindViewById<Button>(Resource.Id.btnWylogujSie);
@@ -44,7 +44,7 @@ namespace Dziennik
             //inicjalizcja buttonow
             btnWylogujSie.Click += (object sender, EventArgs args) =>
             {
-                dialog_zaloguj.ZalogujSuccess = false;
+                MainActivity.User_ID = 0;
                 Finish();
                 StartActivity(typeof(MainActivity));
             };
