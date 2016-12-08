@@ -29,7 +29,7 @@
         android:layout_marginTop="50dp"
         android:layout_marginBottom="20dp">
         <TextView
-            android:text="System Log"
+            android:text=""
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -95,4 +95,25 @@
         android:layout_marginRight="20dp"
         android:textSize="15sp"
         android:drawableLeft="@drawable/mail_icon" />
+  <TextView
+    android:text="@string/BartusZak"
+    android:textAppearance="?android:attr/textAppearanceMedium"
+    android:layout_width="match_parent"
+    android:layout_weight="5"
+    android:layout_height="0dp"
+    android:textColor="#000"
+    android:id="@+id/txtCopyright"
+    android:gravity="center"
+    android:textSize="20px"
+    android:layout_marginTop="50px" />
+  <TextView
+      android:text="www.bartuszak.pl"
+      android:textAppearance="?android:attr/textAppearanceMedium"
+      android:layout_width="match_parent"
+      android:layout_weight="5"
+      android:layout_height="0dp"
+      android:textColor="#000"
+      android:id="@+id/txtCopyright"
+      android:gravity="center"
+      android:textSize="20px" />
 </LinearLayout>

@@ -118,8 +118,8 @@ namespace Dziennik
 			// aapt resource value: 0x7f080019
 			public const int XtxtSysLogMain = 2131230745;
 			
-			// aapt resource value: 0x7f080021
-			public const int add = 2131230753;
+			// aapt resource value: 0x7f080022
+			public const int add = 2131230754;
 			
 			// aapt resource value: 0x7f080003
 			public const int btnDialogDodajCwiczenie = 2131230723;
@@ -133,8 +133,8 @@ namespace Dziennik
 			// aapt resource value: 0x7f08001d
 			public const int btnSignUp = 2131230749;
 			
-			// aapt resource value: 0x7f08001f
-			public const int btnStar = 2131230751;
+			// aapt resource value: 0x7f080020
+			public const int btnStar = 2131230752;
 			
 			// aapt resource value: 0x7f080013
 			public const int btnTwojeCwiczenia = 2131230739;
@@ -151,8 +151,8 @@ namespace Dziennik
 			// aapt resource value: 0x7f080018
 			public const int imageView1 = 2131230744;
 			
-			// aapt resource value: 0x7f08001e
-			public const int imgPic = 2131230750;
+			// aapt resource value: 0x7f08001f
+			public const int imgPic = 2131230751;
 			
 			// aapt resource value: 0x7f08000e
 			public const int listView = 2131230734;
@@ -163,14 +163,17 @@ namespace Dziennik
 			// aapt resource value: 0x7f080004
 			public const int progressBar_sign_up = 2131230724;
 			
-			// aapt resource value: 0x7f080020
-			public const int search = 2131230752;
+			// aapt resource value: 0x7f080021
+			public const int search = 2131230753;
 			
 			// aapt resource value: 0x7f08000f
 			public const int textView1 = 2131230735;
 			
 			// aapt resource value: 0x7f080011
 			public const int textView3 = 2131230737;
+			
+			// aapt resource value: 0x7f08001e
+			public const int txtCopyright = 2131230750;
 			
 			// aapt resource value: 0x7f080017
 			public const int txtCreateAccount = 2131230743;
