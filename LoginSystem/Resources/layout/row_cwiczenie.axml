@@ -7,7 +7,7 @@
     android:background="#F1F1F1">
     <ImageView
         android:id="@+id/imgPic"
-        android:src="@drawable/ic_action_person"
+        android:src="@drawable/ic_action_free_weight"
         android:layout_width="0dp"
         android:layout_weight="25"
         android:layout_height="wrap_content"
