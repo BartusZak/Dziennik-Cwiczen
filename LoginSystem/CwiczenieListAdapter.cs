@@ -63,7 +63,7 @@ namespace Dziennik
                 pic.SetImageBitmap(BitmapFactory.DecodeByteArray(mCwiczenia[position].Image, 0, mCwiczenia[position].Image.Length));
             }
 
-            //pic.Tag = position;
+           
             pic.Click -= pic_Click;
             pic.Click += pic_Click;
             return row;

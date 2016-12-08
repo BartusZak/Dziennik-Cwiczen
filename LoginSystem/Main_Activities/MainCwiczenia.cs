@@ -25,7 +25,6 @@ namespace Dziennik
         private ImageView mSelectedPic;
         private DBConnect_cwiczenia dbConnect_cwiczenia;
         public  byte[] picData;
-        MySqlConnection connection;
 
         protected override void OnCreate(Bundle bundle)
         {
