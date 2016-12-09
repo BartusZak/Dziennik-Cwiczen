@@ -152,12 +152,22 @@ namespace Dziennik
             {
                 case Resource.Id.add:
 
-                    CreateCwiczenieDialog dialog = new CreateCwiczenieDialog();
-                    FragmentTransaction transaction = FragmentManager.BeginTransaction();
+                    CreateCwiczenieDialog dialog_dodaj = new CreateCwiczenieDialog();
+                    FragmentTransaction transaction_dodaj = FragmentManager.BeginTransaction();
 
                     //Subscribe to event
-                    dialog.OnDodajCwiczenie += dialog_OnDodajCwiczenie;
-                    dialog.Show(transaction, "dodaj cwiczenie");
+                    dialog_dodaj.OnDodajCwiczenie += dialog_OnDodajCwiczenie;
+                    dialog_dodaj.Show(transaction_dodaj, "dodaj cwiczenie");
+                    return true;
+
+                case Resource.Id.delete:
+
+                    DeleteCwiczenieDialog dialog_usun = new DeleteCwiczenieDialog();
+                    FragmentTransaction transaction_usun = FragmentManager.BeginTransaction();
+
+                    //Subscribe to event
+                    dialog_usun.OnUsunCwiczenie += dialog_OnUsunCwiczenie;
+                    dialog_usun.Show(transaction_usun, "usun cwiczenie");
                     return true;
 
                 default:
@@ -171,7 +181,12 @@ namespace Dziennik
             mCwiczenia.Add(new Cwiczenie() { Cwiczenie_v = e.Cwiczenie, IloscSerii_v = e.IloscSerii, IloscPowtorzen_v = e.IloscPowtorzen });
 
             mAdapter.NotifyDataSetChanged();
+        }
 
+        void dialog_OnUsunCwiczenie(object sender, UsunCwiczenieEventArgs e)
+        {
+            //mCwiczenia.Remove(Cwiczenie() { Cwiczenie_v = e.Cwiczenie });
+            mAdapter.NotifyDataSetChanged();
         }
     }
 }

@@ -34,31 +34,13 @@
         android:id="@+id/txtUser_Email"
         android:gravity="center" />
     <Button
-        android:text="TWOJE ĆWICZENIA"
+        android:text="ZARZĄDZANIE ĆWICZENIAMI"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/btnTwojeCwiczenia"
         android:background="@drawable/buttonsignupstyle"
         android:layout_marginBottom="30px"
         android:layout_marginTop="50px"
-        android:layout_marginLeft="40px"
-        android:layout_marginRight="40px" />
-    <Button
-        android:text="DODAJ ĆWICZENIE"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnDodajCwiczenie"
-        android:background="@drawable/buttonsignupstyle"
-        android:layout_marginBottom="30px"
-        android:layout_marginLeft="40px"
-        android:layout_marginRight="40px" />
-    <Button
-        android:text="USUŃ ĆWICZENIE"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnUsunCwiczenie"
-        android:background="@drawable/buttonsignupstyle"
-        android:layout_marginBottom="30px"
         android:layout_marginLeft="40px"
         android:layout_marginRight="40px" />
     <Button

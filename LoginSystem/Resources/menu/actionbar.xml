@@ -1,9 +1,9 @@
 ﻿<menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-  <item android:id="@+id/search"
-        android:title="search"
+  <item android:id="@+id/delete"
+        android:title="delete"
         android:showAsAction="always"
-        android:icon="@drawable/ic_action_search"/>
+        android:icon="@drawable/ic_action_delete"/>
 
   <item android:id="@+id/add"
         android:title="add"

@@ -83,6 +83,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DeleteCwiczenieDialog.cs" />
     <Compile Include="Cwiczenie.cs" />
     <Compile Include="CwiczenieListAdapter.cs" />
     <Compile Include="CreateCwiczenieDialog.cs" />
@@ -112,6 +113,7 @@
     <AndroidResource Include="Resources\layout\dziennik_dodaj.axml" />
     <AndroidResource Include="Resources\layout\row_cwiczenie.axml" />
     <AndroidResource Include="Resources\layout\dialog_dodaj_cwiczenie.axml" />
+    <AndroidResource Include="Resources\layout\dialog_usun_cwiczenie.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml">
