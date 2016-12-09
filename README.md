@@ -11,4 +11,18 @@ Niezrealizowane punkty:
 
 2. Naprawić logowanie
 
-3.
+3........
+
+
+
+Co udało się zrobić:
+
+1. Konfiguracja MySql na VPS #Workbench #Linux #MySql
+/etc/mysql/my.cnf
+bind-address = 127.0.0.1
+to
+bind-address = 0.0.0.0
+# mysql -u root -p
+mysql> CREATE USER 'username'@'#' IDENTIFIED BY 'password';
+-> GRANT ALL PRIVILEGES ON *.* TO 'username'@'#' WITH GRANT OPTION;
+-> \q
