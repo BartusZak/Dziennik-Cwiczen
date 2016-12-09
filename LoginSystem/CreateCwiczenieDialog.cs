@@ -73,7 +73,7 @@ namespace Dziennik
 
             //Broadcast event
              dbConnect_cwiczenia = new DBConnect_cwiczenia();
-            dbConnect_cwiczenia.Insert_cwiczenie_return_cwicznie_id(txtCwiczenie.Text, txtIloscSerii.Text, txtIloscPowtorzen.Text);
+            dbConnect_cwiczenia.Insert_Cwiczenie(txtCwiczenie.Text, txtIloscSerii.Text, txtIloscPowtorzen.Text);
 
              OnDodajCwiczenie.Invoke(this, new DodajCwiczenieEventArgs(txtCwiczenie.Text, txtIloscSerii.Text, txtIloscPowtorzen.Text));
             this.Dismiss();

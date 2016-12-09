@@ -53,9 +53,9 @@ namespace Dziennik
         {
             //Broadcast event
             dbConnect_cwiczenia = new DBConnect_cwiczenia();
-            dbConnect_cwiczenia.Remove_cwiczenie_by_cwicznie_name(txtCwiczenieUsun.Text);
+            dbConnect_cwiczenia.Remove_Cwiczenie_by_Cwicznie_Name(txtCwiczenieUsun.Text);
 
-            OnUsunCwiczenie.Invoke(this, new UsunCwiczenieEventArgs(txtCwiczenieUsun.Text));
+           // OnUsunCwiczenie.Invoke(this, new UsunCwiczenieEventArgs(txtCwiczenieUsun.Text));
             this.Dismiss();
         }
 
@@ -71,7 +71,7 @@ namespace Dziennik
                 if (OnUsunCwiczenie != null)
                 {
                     //Broadcast event
-                    OnUsunCwiczenie.Invoke(this, new UsunCwiczenieEventArgs(txtCwiczenieUsun.Text));
+                  //  OnUsunCwiczenie.Invoke(this, new UsunCwiczenieEventArgs(txtCwiczenieUsun.Text));
 
                 }
 

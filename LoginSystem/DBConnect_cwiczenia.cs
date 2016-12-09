@@ -16,7 +16,7 @@ namespace Dziennik
     class DBConnect_cwiczenia : DBConnect
     {
         //Insert statement
-        public void Insert_cwiczenie_return_cwicznie_id(string Cwiczenie_Nazwa, string Cwiczenie_IloscSerii, string Cwiczenie_IloscPowtorzen)
+        public void Insert_Cwiczenie(string Cwiczenie_Nazwa, string Cwiczenie_IloscSerii, string Cwiczenie_IloscPowtorzen)
         {
            
             string query = "INSERT INTO Cwiczenia (User_ID,Cwiczenie_Nazwa,Cwiczenie_IloscSerii,Cwiczenie_IloscPowtorzen) VALUES(" + User_ID + ",'" + Cwiczenie_Nazwa + "','" + Cwiczenie_IloscSerii + "','" + Cwiczenie_IloscPowtorzen + "')";
@@ -108,9 +108,9 @@ namespace Dziennik
         }
 
         //Delete statement
-        public void Delete()
+        public void Remove_Cwiczenie_by_Cwicznie_Name(string Cwiczenie_Nazwa)
         {
-            string query = "DELETE FROM tableinfo WHERE name='John Smith'";
+            string query = "DELETE FROM Cwiczenia WHERE Cwiczenie_Nazwa='" + Cwiczenie_Nazwa+"' AND User_ID="+User_ID;
 
             if (this.OpenConnection() == true)
             {
