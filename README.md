@@ -9,10 +9,7 @@ Niezrealizowane punkty:
 1. Problem ze zdjęciem do danego ćwiczenia.
 (Program nie wysyła pliku bitmapy do serwera MySql) - Dlaczego?
 
-2. Naprawić logowanie
-
-3........
-
+2. Problem z odsiwezeniem Activity,gdy wykonuję zapytania na DialogForm
 
 
 Co udało się zrobić:
@@ -26,3 +23,5 @@ bind-address = 0.0.0.0
 mysql> CREATE USER 'username'@'#' IDENTIFIED BY 'password';
 -> GRANT ALL PRIVILEGES ON *.* TO 'username'@'#' WITH GRANT OPTION;
 -> \q
+
+2.  
